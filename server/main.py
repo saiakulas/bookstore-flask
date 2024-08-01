@@ -1,18 +1,15 @@
-from flask import Flask, jsonify
-from flask_cors import CORS
+from flask import Flask
+from flask_pymongo import PyMongo
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
 
 app = Flask(__name__)
-cors=CORS(app,origin='*')
+app.config['MONGO_URI'] = os.getenv('MONGO_URI', 'mongodb://localhost:27017/bookstore')
+mongo = PyMongo(app)
 
-@app.route("/api/users", methods=['GET'])
-def users():
-    return jsonify({
-        "users": [
-            "sai",
-            "ram",
-            "teja"
-        ]
-    })
+from routes import *
 
-if __name__ == "__main__":
-    app.run()
+if __name__ == '__main__':
+    app.run(debug=True)
