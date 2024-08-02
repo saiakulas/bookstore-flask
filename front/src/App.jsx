@@ -1,24 +1,14 @@
-import { useState,useEffect } from 'react'
-import './App.css'
-import axios from 'axios'
+import React from 'react';
+import AddBook from './components/AddBook';
+import BookList from './components/BooksList';
 
 function App() {
-const [array,setArray]=useState([])  
-  
-const fetchApi=async()=>{
-  const response=await axios.get("http://127.0.0.1:5000/api/users")
-  setArray(response.data.users)
-}
-
-useEffect(()=>{
-fetchApi()
-},[])
-
   return (
-    <>
-     {array}
-    </>
-  )
+    <div>
+      <AddBook />
+      <BookList />
+    </div>
+  );
 }
 
-export default App
+export default App;
