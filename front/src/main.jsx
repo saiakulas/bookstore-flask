@@ -1,10 +1,12 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
-import './index.css'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
+import { PrimeReactProvider } from 'primereact/api'; // Import PrimeReactProvider
+import './index.css'; // Import your styles
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
+ReactDOM.render(
+  <PrimeReactProvider>
     <App />
-  </React.StrictMode>,
-)
+  </PrimeReactProvider>,
+  document.getElementById('root')
+);

@@ -16,12 +16,16 @@ collection = db["books"]
 def get_books():
     books = collection.find()
     return dumps(books)
-
 @app.route('/books', methods=['POST'])
 def add_book():
     data = request.json
+    # Ensure the data includes the required fields, including 'title', 'author', and 'image_url'
+    if not all(key in data for key in ('title', 'author', 'image_url')):
+        return jsonify({"error": "Missing required fields"}), 400
+
     collection.insert_one(data)
     return jsonify({"status": "Book added!"}), 201
+
 
 @app.route('/books/<id>', methods=['DELETE'])
 def delete_book(id):
