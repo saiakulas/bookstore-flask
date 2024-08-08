@@ -21,40 +21,42 @@ function AddBook() {
   };
 
   return (
-    <div className="add-book-container">
-      <h2>Add a New Book</h2>
-      <div className="p-fluid">
-        <div className="p-field">
-          <label htmlFor="name">Book Name</label>
-          <InputText
-            id="name"
-            placeholder="Book Name"
-            value={name}
-            onChange={e => setName(e.target.value)}
-            style={{ width: '100%' }}
-          />
+    <div className="app-container">
+      <div className="add-book-form-container">
+        <h2>Add a New Book</h2>
+        <div className="p-fluid">
+          <div className="p-field">
+            <label htmlFor="name">Book Name</label>
+            <InputText
+              id="name"
+              placeholder="Book Name"
+              value={name}
+              onChange={e => setName(e.target.value)}
+              style={{ width: '100%' }}
+            />
+          </div>
+          <div className="p-field">
+            <label htmlFor="author">Author</label>
+            <InputText
+              id="author"
+              placeholder="Author"
+              value={author}
+              onChange={e => setAuthor(e.target.value)}
+              style={{ width: '100%' }}
+            />
+          </div>
+          <div className="p-field">
+            <label htmlFor="imageUrl">Image URL</label>
+            <InputText
+              id="imageUrl"
+              placeholder="Image URL"
+              value={imageUrl}
+              onChange={e => setImageUrl(e.target.value)}
+              style={{ width: '100%' }}
+            />
+          </div>
+          <Button label="Add Book" icon="pi pi-plus" onClick={handleSubmit} style={{ width: '100%' }} />
         </div>
-        <div className="p-field">
-          <label htmlFor="author">Author</label>
-          <InputText
-            id="author"
-            placeholder="Author"
-            value={author}
-            onChange={e => setAuthor(e.target.value)}
-            style={{ width: '100%' }}
-          />
-        </div>
-        <div className="p-field">
-          <label htmlFor="imageUrl">Image URL</label>
-          <InputText
-            id="imageUrl"
-            placeholder="Image URL"
-            value={imageUrl}
-            onChange={e => setImageUrl(e.target.value)}
-            style={{ width: '100%' }}
-          />
-        </div>
-        <Button label="Add Book" icon="pi pi-plus" onClick={handleSubmit} style={{ width: '100%' }} />
       </div>
     </div>
   );

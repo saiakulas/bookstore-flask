@@ -13,7 +13,7 @@ function BookList() {
   }, []);
 
   return (
-    <div>
+    <div className="book-list-container">
       <h2>Book List</h2>
       <div className="p-grid">
         {books.map(book => (

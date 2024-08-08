@@ -6,9 +6,7 @@ import './App.css'; // Ensure CSS is imported
 function App() {
   return (
     <div className="app-container">
-      <div className="add-book-container">
-        <AddBook />
-      </div>
+      <AddBook />
       <BookList />
     </div>
   );
